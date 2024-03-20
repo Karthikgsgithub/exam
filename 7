@@ -1,0 +1,12 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv("tips.csv")
+day_order=['Thur','Fri','Sat','Sun']
+f,axes=plt.subplots(1,2,figsize=(12,4))
+sns.countplot(x="day",data=df,hue="time",palette=["teal","yellow"],order=day_orde
+r,ax=axes[0])
+axes[0].set_title("Count of tables served by day-4VP22CS097")
+sns.countplot(x="day",hue="size",data=df,ax=axes[1],order=day_order)
+axes[1].set_title("Tables served by the day and by party size comment4VP22CS097")
+plt.show()
