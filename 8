@@ -1,0 +1,44 @@
+from bokeh.plotting import figure,show
+from bokeh.models import Legend,LegendItem
+from bokeh.models.annotations import Label
+x=[1,2,3,4,5]
+y1=[2,4,6,8,10]
+y2=[1,3,5,7,9]
+p=figure(title="Linegraph with annotations and legends4VP22CS071",x_axis_label='X-axis',y_axis_label='Y-axis')
+line1=p.line(x,y1,legend_label="line1",line_width=2,line_color="blue")
+line2=p.line(x,y2,legend_label="line2",line_width=2,line_color="red")
+label1=Label(x=3,y=8,text="Annotation 1",text_color='blue')
+label2=Label(x=2,y=2,text="Annotation 2",text_color='red')
+legend=Legend(items=[LegendItem(label="line1",renderers=[line1]),LegendItem(label
+="line2",renderers=[line2]),])
+p.add_layout(label1)
+p.add_layout(label2)
+p.add_layout(legend)
+show(p)
+
+
+8b
+from bokeh.plotting import figure,output_file,show
+from bokeh.layouts import column,row
+from bokeh.models import ColumnDataSource
+import numpy as np
+output_file("bokeh_plots.html")
+x=np.linspace(0,4*np.pi,100)
+y=np.sin(x)
+line_plot=figure(title="Line Plot-4VP22CS110",x_axis_label="Xaxis",y_axis_label="Y-axis")
+line_plot.line(x,y,line_width=2,legend_label="sin(x)",line_color="blue")
+scatter_plot=figure(title="Scatter Plot-4VP22CS110",x_axis_label="Xaxis",y_axis_label="Y-axis")
+scatter_plot.scatter(x,y,marker="circle",size=6,legend_label="Data 
+points",color="red")
+bar_x=["A","B","C","D","E"]
+bar_y=[4,7,2,5,8]
+bar_source=ColumnDataSource(data=dict(x=bar_x,y=bar_y))
+bar_plot=figure(x_range=bar_x,title="Bar Plot4VP22CS110",x_axis_label="Categories",y_axis_label="Values")
+bar_plot.vbar(x="x",top="y",source=bar_source,width=0.5,color="green",legend_labe
+l="Values")
+hist,edges=np.histogram(y,bins=20)
+hist_plot=figure(title="Histogram4VP22CS110",x_axis_label="Values",y_axis_label="Frequency")
+hist_plot.quad(top=hist,bottom=0,left=edges[:-
+1],right=edges[1:],fill_color="purple",line_color="black")
+layout=row(column(line_plot,scatter_plot),column(bar_plot,hist_plot))
+show(layout)
