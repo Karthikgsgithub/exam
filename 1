@@ -1,0 +1,36 @@
+1a
+
+test1=float(input("Enter the marks in the 1st test :"))
+test2=float(input("Enter the marks in the 2st test :"))
+test3=float(input("Enter the marks in the 3st test :"))
+avg=((test1+test2+test3)-min(test1,test2,test3))/2
+print("The average marks in best of two is :",avg)
+
+
+1b
+
+def is_palindrome(number):
+ num_str=str(number)
+ return num_str==num_str[::-1]
+def count_digit_occurences(number):
+ num_str=str(number)
+ digit_counts={}
+ for char in num_str:
+ if char.isdigit():
+ digit=int(char)
+ if digit in digit_counts:
+ digit_counts[digit]+=1
+ else:
+ digit_counts[digit]=1
+ return digit_counts
+try:
+ number=int(input('Enter the number:'))
+ if is_palindrome(number):
+ print(f"{number} is a palindrome")
+ else:
+ print(f"{number} is not a palindrome")
+ digit_counts=count_digit_occurences(number)
+ for digits,counts in digit_counts.items():
+ print(f"digit {digits} occurs {counts} times in {number}")
+except valueError:
+ print("Invalid input.Please enter a valid number")
