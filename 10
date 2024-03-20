@@ -1,0 +1,23 @@
+10a
+import pandas as pd
+import plotly.express as px
+df=pd.read_csv('apple.csv')
+fig=px.line(df,x='Date',y='AAPLHigh',title="4VP22CS097")
+fig.show()
+
+10b
+import plotly.express as px
+fig=px.choropleth(title='4VP22CS092',locations=['india','nepal','china','pakistan
+','Bangladesh','bhutan','myanmar','srilanka'],locationmode='country 
+names',color_continuous_scale='Jet',color=[1,2,3,4,5,6,7,8],scope="world")
+fig.show()
+
+10c
+import plotly.express as px
+import pandas as pd
+data=pd.DataFrame({'Country':['USA','Canada','Mexico'],'Values':[20,15,5]})
+print(data)
+fig=px.choropleth(data,locations='Country',locationmode='country 
+names',color='Values',hover_name='Country',title='4VP22CS092',color_continuous_sc
+ale='Rainbow')
+fig.show()
