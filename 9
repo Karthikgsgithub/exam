@@ -1,0 +1,6 @@
+import plotly.express as px
+import pandas as pd
+df=pd.read_csv('iris.csv')
+fig=px.scatter_3d(df,x='sepal_length',y='sepal_width',z='petal_width',color='spec
+ies',title='3d-plot 4VP22CS097')
+fig.show()
