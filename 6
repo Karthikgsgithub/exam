@@ -1,0 +1,23 @@
+6a
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y=[2,4,6,8,10]
+plt.plot(x,y,color='red',marker='o',linestyle='-',label='Line plot')
+plt.xlabel("X axis")
+plt.ylabel("Y axis")
+plt.legend()
+plt.show()
+
+
+6b
+import matplotlib.pyplot as plt
+x=[1,2,3,4,5]
+y1=[2,4,6,8,10]
+y2=[1,3,5,7,9]
+plt.plot(x,y1,color='b',marker='o',linestyle='-',label='Line 1')
+plt.plot(x,y2,color='r',marker='s',linestyle='--',label='Line 2')
+plt.xlabel("X axis")
+plt.ylabel("Y axis")
+plt.title('Linear plot with line formatting')
+plt.legend()
+plt.show()
