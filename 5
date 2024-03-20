@@ -1,0 +1,19 @@
+5a
+import matplotlib.pyplot as plt
+data1=[1,2,3,3,4,8,9,10,15,16,17,18]
+plt.hist(data1,bins=10,color='skyblue',edgecolor='black')
+plt.xlabel('value')
+plt.ylabel('frequency')
+plt.title('Histogram plot two list Example')
+plt.show()
+
+
+5b
+import matplotlib.pyplot as plt
+labels=['Category A','Category B','Category C','Category D']
+size=[15,30,45,10]
+explode=(0,0.1,0,0)
+plt.pie(size,labels=labels,explode=explode,autopct='%1.1f%%',startangle=90,shadow
+=True)
+plt.title('Pie chart Example-4VP22CS097')
+plt.show()
